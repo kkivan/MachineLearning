@@ -1,0 +1,27 @@
+import numpy as np 
+import math
+
+X = np.random.normal(loc=1, scale=10, size=(1000, 50))
+m = np.mean(X, axis=0)
+std = np.std(X, axis=0)
+
+X_norm = ((X - m) / std)
+
+Z = np.array([[4, 5, 0], 
+             [1, 9, 3],              
+             [5, 1, 1],
+             [3, 3, 3], 
+             [9, 9, 9], 
+             [4, 7, 1]])
+
+r = np.sum(Z, axis=1)
+print r
+
+print np.nonzero(r > 10)
+
+A = np.eye(3)
+B = np.eye(3)
+
+AB = np.vstack((A,B))
+
+print AB
